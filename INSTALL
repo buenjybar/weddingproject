@@ -1,0 +1,16 @@
+we use grunt script to build the application to his minify version
+and send it to the server using sftp protocol.
+
+REQUIREMENTS:
+you need to download and install nodeJS at the following link : 
+http://nodejs.org/download/
+
+this nodeJs applications contains all the npm (node package manager) required by Grunt to download required modules
+for more information: http://gruntjs.com/
+
+INSTRUCTIONS:
+1) open command line in the root folder
+2) install globally grunt-cli with the command line : "npm install -g grunt-cli" (first time only)
+3) update the dependencies modules with the command line "npm install" (every time the package.json is modified)
+   (will loop on packages.json file config and download required modules to build the project)
+4) build the project with the command line "grunt"

@@ -1,0 +1,5 @@
+#jetbrains ide folder
+.idea/**
+
+#npm modules folder
+node_modules/**
