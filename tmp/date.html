@@ -3,21 +3,26 @@
 <head>
     <title>date a retenir</title>
     <link rel="shortcut icon" href="../images/favicon.png" type="image/x-icon">
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../js/util/countdown/countdown.js"></script>
     <style>
         body {
             background-color: #000000;
         }
+
         body img {
             display: block;
             margin-left: auto;
             margin-right: auto;
             cursor: pointer;
         }
+
         body p {
             color: #ffffff;
             display: block;
             text-align: center;
         }
+
         body p a {
             color: #E164FA;
         }
@@ -25,6 +30,38 @@
 </head>
 <body onclick="window.location='construction.html'">
 <br><br><br>
-<img src="../images/tmp/save_the_date.jpg"/>
+<table width="100%" border="0" cellspacing="0" cellpadding="20">
+    <tbody>
+    <tr>
+        <td align="center" valign="middle">
+            <img src="../images/tmp/save_the_date.jpg"/>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" valign="middle">
+            <div id="weddingCountdown"></div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+    function initCountdown() {
+        return new Countdown({
+            year: 2014,
+            month: 8,
+            day: 23,
+            width: 400,
+            height: 80,
+            inline: true
+        })
+    };
+    initCountdown();
+    //create and countdown element to the div with css
+    $("#weddingCountdown")
+            .append($("#stage_jbeeb_3"))
+            .css("margin-left","auto")
+            .css("margin-right","auto");
+</script>
 </body>
 </html>
