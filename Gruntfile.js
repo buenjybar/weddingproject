@@ -28,14 +28,14 @@ module.exports = function (grunt) {
         sftp: {
             server: {
                 files: {
-                    "./": "dist/**/*"
+                    "./": "dist/**"
                 },
                 options: {
                     host: '<%= secret.host %>',
                     port: '<%= secret.port %>',
                     username: '<%= secret.username %>',
                     path: '/var/www/',
-                    srcBasePath: './',
+                    srcBasePath: 'dist',
                     createDirectories: true,
                     password: '',
                     showProgress: true
