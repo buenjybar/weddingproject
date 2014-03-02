@@ -7,6 +7,7 @@ and open the template in the editor.
 <?php
 var pageselector = $_GET['pg'];
 echo pageselector;
+echo "test";
 ?>
 <html>
     <head>
