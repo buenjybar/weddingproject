@@ -7,14 +7,28 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
         secret: grunt.file.readJSON(config_path + 'secret.json'),
+        copy: {
+            main: {
+                files: [
+                    {expand: true, src: ['robots.txt'], dest: 'dist', filter: 'isFile'},
+                    {expand: true, src: ['template/**/*'], dest: 'dist', filter: 'isFile'},
+                    {expand: true, src: ['js/**/*'], dest: 'dist', filter: 'isFile'},
+                    {expand: true, src: ['css/**/*'], dest: 'dist', filter: 'isFile'},
+                    {expand: true, src: ['tmp/**/*'], dest: 'dist', filter: 'isFile'},
+                    {expand: true, src: ['images/**/*'], dest: 'dist', filter: 'isFile'},
+                    {expand: true, src: ['index.html'], dest: 'dist', filter: 'isFile'}
+                ]
+            }
+        },
+        clean: {
+            dist: {
+                src: ['dist/']
+            }
+        },
         sftp: {
             server: {
                 files: {
-                    "images/": "images/**/*",
-                    "tmp/": "tmp/**",
-                    "js/": "js/**",
-                    "css/": "css/**",
-                    "./": "index.html"
+                    "./": "dist/**/*"
                 },
                 options: {
                     host: '<%= secret.host %>',
@@ -43,8 +57,8 @@ module.exports = function (grunt) {
                 }
             }
         },
-        exec:{
-            open:{
+        exec: {
+            open: {
                 cmd: "START http://<%= secret.host %>/"
             }
         }
@@ -56,10 +70,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-requirejs');
+//    grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-prompt');
     grunt.loadNpmTasks('grunt-exec');
     grunt.loadNpmTasks('grunt-ssh');
+    grunt.loadNpmTasks('grunt-processhtml');
 
     //Default task
     grunt.registerTask('default', ['build']);
@@ -72,6 +87,10 @@ module.exports = function (grunt) {
         grunt.log.writeln(file);
 
     });
+
+    grunt.registerTask('build', 'build the dist folder before to transfert it',
+        ['clean:dist', 'copy:main']
+    );
 
     //transfer to server
     grunt.registerTask('transfer',

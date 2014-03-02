@@ -3,3 +3,6 @@
 
 #npm modules folder
 node_modules/**
+
+#dist folder
+dist/**
