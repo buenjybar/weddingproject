@@ -9,21 +9,23 @@ body {
 }
 
 body .content {
-    width: 784px;
-    height: auto;
+    width: 1024px;
+    height: 95%;
+    margin-top: 10px;
+    margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
     background-color: #ffffff;
     /*background:url(../images/shadow.png) ;*/
-
 }
-
+body .header{
+    text-align: center;
+}
 body .logo {
-    width: auto;
+    text-align: center;
     height: 150px;
-    background-color: #fadaf0;
+    background-color: #eeeeee;
 }
-
 .panel {
 
 }
