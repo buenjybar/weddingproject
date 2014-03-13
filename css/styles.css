@@ -1,0 +1,35 @@
+body {
+    background-color: #fadaf0;
+    /*background: url(../images/pageBG_200x200.gif);*/
+}
+
+@font-face {
+    font-family: myfont;
+    src: url(../css/Znikomit.otf);
+}
+
+body .content {
+    width: 1024px;
+    height: 95%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+    /*background:url(../images/shadow.png) ;*/
+}
+body .header{
+    text-align: center;
+}
+body .logo {
+    text-align: center;
+    height: 150px;
+    background-color: #eeeeee;
+}
+.panel {
+
+}
+
+p {
+    font-family: myfont;
+}
