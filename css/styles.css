@@ -1,4 +1,5 @@
 body {
+    /*background: url(../images/logo-small-bg.png);*/
     background-color: #fadaf0;
     /*background: url(../images/pageBG_200x200.gif);*/
 }
@@ -24,12 +25,21 @@ body .header{
 body .logo {
     text-align: center;
     height: 150px;
-    background-color: #eeeeee;
+    /*background-color: #eeeeee;*/
+    background-color: #fff;
 }
 .panel {
 
 }
 
+h4 {
+    color: #f2a0d9 !important ;
+}
+
 p {
     font-family: myfont;
+}
+
+.underline{
+    background-color: #ffff00;
 }
