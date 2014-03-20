@@ -43,3 +43,11 @@ p {
 .underline{
     background-color: #ffff00;
 }
+div#midmail{
+	margin-top: 30px;
+	width: 100%;
+	text-align: center;
+}
+div.blogo{
+	margin-top: -20px;
+}
