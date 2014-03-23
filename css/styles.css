@@ -40,6 +40,11 @@ p {
     font-family: myfont;
 }
 
+span.reverse {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+
 .underline{
     background-color: #ffff00;
 }
