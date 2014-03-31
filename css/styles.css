@@ -1,6 +1,6 @@
 body {
     /*background: url(../images/logo-small-bg.png);*/
-    background-color: #fadaf0;
+    /*background-color: #fadaf0;*/
     /*background: url(../images/pageBG_200x200.gif);*/
 }
 
@@ -38,6 +38,9 @@ h4 {
 p {
     font-family: myfont;
 }
+li {
+    font-family: myfont;
+}
 
 span.reverse {
     unicode-bidi: bidi-override;
@@ -53,5 +56,12 @@ div#midmail{
 	text-align: center;
 }
 div.blogo{
+	margin-top: -10px;
+}
+
+div .smallerdiv{
+	margin-left: auto;
+	margin-right: auto;
+	width: 25%;
 	margin-top: -20px;
 }
