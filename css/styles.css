@@ -35,6 +35,15 @@ h4 {
     color: #f2a0d9 !important ;
 }
 
+h5 {
+    color: #f2a0d9 !important ;
+	font-size:	1.35rem;
+}
+
+h3 {
+    color: #f2a0d9 !important ;
+}
+
 p {
     font-family: myfont;
 }
