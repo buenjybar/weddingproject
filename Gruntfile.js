@@ -26,7 +26,7 @@ module.exports = function (grunt) {
                     {expand: true, src: ['images/**/*' , '!images/tmp/**/*' , '!**/*.jpg'], dest: 'dist', filter: 'isFile'},
                     {expand: true, src: ['index.html'], dest: 'dist', filter: 'isFile'},
                     {expand: true, src: ['robots.txt'], dest: 'dist', filter: 'isFile'},
-                    {expand: true, src: ['.htaccess'], dest: 'dist', filter: 'isFile'}
+                    {expand: true, src: ['404.html'], dest: 'dist', filter: 'isFile'}
                 ]
             }
         },
