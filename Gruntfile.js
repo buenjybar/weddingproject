@@ -7,17 +7,26 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
         secret: grunt.file.readJSON(config_path + 'secret.json'),
+        cssmin:{
+            build:{
+                files:{
+                    'dist/css/foundation.css' : ['css/foundation.css'],
+                    'dist/css/styles.css' : ['css/styles.css']
+                }
+            }
+        },
         copy: {
             main: {
                 files: [
-                    {expand: true, src: ['robots.txt'], dest: 'dist', filter: 'isFile'},
                     {expand: true, src: ['template/**/*'], dest: 'dist', filter: 'isFile'},
-                    {expand: true, src: ['js/**/*'], dest: 'dist', filter: 'isFile'},
-                    {expand: true, src: ['css/**/*'], dest: 'dist', filter: 'isFile'},
+                    {expand: true, src: ['js/**/*' , '!js/foundation/**/*', '!js/util/**/*'], dest: 'dist', filter: 'isFile'},
+                    {expand: true, src: ['css/**/*', '!**/*.css'], dest: 'dist', filter: 'isFile'},
                     {expand: true, src: ['data/**/*'], dest: 'dist', filter: 'isFile'},
 //                    {expand: true, src: ['tmp/**/*'], dest: 'dist', filter: 'isFile'},
-                    {expand: true, src: ['images/**/*' , '!images/tmp/**/*'], dest: 'dist', filter: 'isFile'},
-                    {expand: true, src: ['index.html'], dest: 'dist', filter: 'isFile'}
+                    {expand: true, src: ['images/**/*' , '!images/tmp/**/*' , '!**/*.jpg'], dest: 'dist', filter: 'isFile'},
+                    {expand: true, src: ['index.html'], dest: 'dist', filter: 'isFile'},
+                    {expand: true, src: ['robots.txt'], dest: 'dist', filter: 'isFile'},
+                    {expand: true, src: ['.htaccess'], dest: 'dist', filter: 'isFile'}
                 ]
             }
         },
@@ -71,6 +80,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 //    grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-prompt');
     grunt.loadNpmTasks('grunt-exec');
@@ -90,7 +100,7 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('build', 'build the dist folder before to transfert it',
-        ['clean:dist', 'copy:main']
+        ['clean:dist', 'cssmin:build', 'copy:main']
     );
 
     //transfer to server
