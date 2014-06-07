@@ -18,372 +18,415 @@
 </head>
 <body>
 <div class="content">
-    <div class="row">
-        <div class="large-12 medium-12 columns">
-            <div class="logo large-12 blogo" style="height:200px;">
-                <img src="../images/logo-small.png"/>
-            </div>
-			<div class="header large-12 smallerdiv">
-                <img src="../images/title-2.png"/>
-            </div>
+<div class="row">
+    <div class="large-12 medium-centered medium-4 small-centered small-12 columns">
+        <div class="large-centered large-3 medium-centered medium-12 hide-for-small-only column">
+            <img class="large-12 medium-centered medium-12 small-12 column" src="../images/logo-small.png"/>
+        </div>
+        <div class="header large-12 medium-12 small-12">
+            <img class="large-centered large-4 medium-12 small-12 column"  src="../images/title-2.png"/>
         </div>
     </div>
+</div>
 
-    <div class="row">
-        <nav class="top-bar">
-            <ul class="title-area">
-                <!-- Title Area -->
-                <li class="name"></li>
-                <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+<div class="row">
+    <nav class="top-bar">
+        <ul class="title-area">
+            <!-- Title Area -->
+            <li class="name"></li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <!-- The Section wrap -->
+        <section class="top-bar-section">
+
+            <!-- Left Nav Section -->
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="acces.html">Acces / Transport</a></li>
+                <li class="active"><a href="hotel.html">Ou Dormir</a></li>
+                <li><a href="list.html">Liste de Mariage</a></li>
+                <li><a href="photos.html">Photos</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
+        </section>
+    </nav>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns">
+        <div class="large-6 medium-6 small-12 column">
+            <h3>Besoin de se loger?</h3>
+            <p>voici une liste d'Hôtels</p>
+        </div>
+        <div class="large-6 medium-6 small-12 columns">
+            <button class="large-5 medium-5 small-5 column" onclick="window.open();">Afficher la carte</button>
+            <button class="right large-5 medium-5 small-6 column" onclick="window.location = '../data/Liste%20hébergement.docx';">télécharger la liste</button>
+        </div>
+    </div>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns" id="environsbons">
+        <h4>1. Dans les environs de Bons</h4>
+    </div>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12" id="hotelsprochedebons">
+        <h5>a. Hôtels proches de Bons</h5>
+    </div>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns">
+        <div class="large-4 medium-6 small-12 column">
+            <p>Hôtel Le progès<br/>rue de l'annexion<br/>74890 Bons-en-Chablais</p>
 
-            <!-- The Section wrap -->
-            <section class="top-bar-section">
+            <p>Tél : 04 50 36 11 09<br/>Mail : contact@hotel-leprogres.com</p>
+            <a href="http://www.hotel-restaurant-chablais-geneve.com/" class="">http://www.hotel-restaurant-chablais-geneve.com/</a>
 
-                <!-- Left Nav Section -->
-                <ul>
-                    <li><a href="accueil.html">Accueil</a></li>
-                    <li><a href="acces.html">Access / Transport</a></li>
-                    <li class="active"><a href="hotel.html">Ou Dormir</a></li>
-                    <li><a href="list.html">Liste de Mariage</a></li>
-                    <li><a href="photos.html">Photos</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </section>
-        </nav>
-    </div>
-    <div class="row">
-        <div class="panel" style="height:100px;">
-            <div class="small-6 large-6 columns">
-                <h3>Besoin de se loger?</h3>
-                <p>voici une liste d'Hôtels</p>
-            </div>
-            <div class="small-6 large-6 columns">
-                <button onclick="window.open();">Afficher la carte</button>
-                <button onclick="window.location = '../data/Liste%20hébergement.docx';">telecharger la liste</button>
-            </div>
+            <p>Chambres de 1 à 4 personnes<br/>De 53 à 99€</p>
         </div>
+
+        <!-- <div class="right large-6 medium-6 hide-for-small-only column">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"
+                     width="400" height="300" frameborder="0" style="border:0"></iframe>
+         </div>
+         <div class="show-for-small-only small-12 column">
+             <a src="">Afficher la carte</a>
+         </div>-->
     </div>
-    <div class="row">
-        <div class="panel" id="environsbons">
-            <h4>1. Dans les environs de Bons</h4>
+</div>
+
+
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns">
+        <div class="large-4 medium-6 small-12 column">
+            <p>Hôtel Savoie-Leman<br/>40 bd Carnot<br/>74200 Thonon-les-Bains</p>
+            <p>Tél : 04 50 81 13 50<br/>Fax : 04 50 81 13 51</p>
+            <a href="http://www.ecole-hoteliere-thonon.com/" class="">http://www.ecole-hoteliere-thonon.com/</a>
+            <p>A partir de 65,00€<br/>Capacité 32 chambres</p>
         </div>
+
+        <!-- <div class="right large-6 medium-6 hide-for-small-only column">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"
+                     width="400" height="300" frameborder="0" style="border:0"></iframe>
+         </div>
+         <div class="show-for-small-only small-12 column">
+             <a src="">Afficher la carte</a>
+         </div>-->
     </div>
-	<div class="row">
-        <div class="panel" id="hotelsprochedebons">
-            <h5>. Hôtels proches de Bons</h5>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns">
+        <div class="large-4 medium-6 small-12 column">
+            <p>Hôtel Ibis Budget<br/>Avenue de la Grangette<br/>74200 Thonon-les-Bains</p>
+            <p>Tél : 08 92 70 03 17<br/>Fax : 04 56 44 80 14</p>
+            <a href="http://www.ibis.com/fr/hotel-6392-ibis-budget-thonon-les-bains-ex-etap-hotel/index.shtml" class="">http://www.ibis.com/fr/</a>
+            <p>A partir de 51,00€<br/>Capacité 88 chambres</p>
         </div>
+
+        <!-- <div class="right large-6 medium-6 hide-for-small-only column">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"
+                     width="400" height="300" frameborder="0" style="border:0"></iframe>
+         </div>
+         <div class="show-for-small-only small-12 column">
+             <a src="">Afficher la carte</a>
+         </div>-->
     </div>
-	<div class="row">
-        <div class="panel" style="height:280px;">
-            <div styles="margin-top:500px;">
-                <div class="small-2 large-4 columns">
-                    <p>Hôtel Le progès<br/>rue de l'annexion<br/>74890 Bons-en-Chablais</p>
-                    <p>Tél : 04 50 36 11 09<br/>Mail : contact@hotel-leprogres.com</p>
-                    <a href="http://www.hotel-restaurant-chablais-geneve.com/" class="">http://www.hotel-restaurant-chablais-geneve.com/</a>
-                    <p>Chambres de 1 à 4 personnes<br/>De 53 à 99€</p>
-                </div>
-                <!--<div class="small-5 large-6 columns right-align right">-->
-                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"-->
-                            <!--width="400" height="300" frameborder="0" style="border:0"></iframe>-->
-                <!--</div>-->
-            </div>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns">
+        <div class="large-4 medium-6 small-12 column">
+            <p>Hôtel Café du Palais<br/>11 bd Général Dessaix<br/>74200 Thonon-les-Bains</p>
+            <p>Tél : 04 50 71 32 94<br/>Fax : 04 50 71 76 80</p>
+            <a href="http://www.hotelcafedupalais.com/" class="">http://www.hotelcafedupalais.com/</a>
+            <p>A partir de 62,00€<br/>Capacité 12 chambres</p>
         </div>
+
+        <!-- <div class="right large-6 medium-6 hide-for-small-only column">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"
+                     width="400" height="300" frameborder="0" style="border:0"></iframe>
+         </div>
+         <div class="show-for-small-only small-12 column">
+             <a src="">Afficher la carte</a>
+         </div>-->
     </div>
-    <div class="row">
-        <div class="panel" style="height:280px;">
-            <div styles="margin-top:500px;">
-                <div class="small-2 large-4 columns">
-                    <p>Hôtel Savoie-Leman<br/>40 bd Carnot<br/>74200 Thonon-les-Bains</p>
-                    <p>Tél : 04 50 81 13 50<br/>Fax : 04 50 81 13 51</p>
-                    <a href="http://www.ecole-hoteliere-thonon.com/" class="">http://www.ecole-hoteliere-thonon.com/</a>
-                    <p>A partir de 65,00€<br/>Capacité 32 chambres</p>
-                </div>
-                <!--<div class="small-5 large-6 columns right-align right">-->
-                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"-->
-                            <!--width="400" height="300" frameborder="0" style="border:0"></iframe>-->
-                <!--</div>-->
-            </div>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns">
+        <div class="large-4 medium-6 small-12 column">
+            <p>Hôtel A l’Ombre des Marronniers<br/>17 place de Crête<br/>74200 Thonon-les-Bains</p>
+            <p>Tél : 04 50 71 26 18<br/>Fax : 04 50 26 27 47</p>
+            <a href="http://www.hotellesmarronniers.com/" class="">http://www.hotellesmarronniers.com/</a>
+            <p>A partir de 60,00€<br/>Capacité 24 chambres</p>
         </div>
+
+        <!-- <div class="right large-6 medium-6 hide-for-small-only column">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"
+                     width="400" height="300" frameborder="0" style="border:0"></iframe>
+         </div>
+         <div class="show-for-small-only small-12 column">
+             <a src="">Afficher la carte</a>
+         </div>-->
     </div>
-    <div class="row">
-        <div class="panel" style="height:280px;">
-            <div styles="margin-top:500px;">
-                <div class="small-2 large-4 columns">
-                    <p>Hôtel Ibis Budget<br/>Avenue de la Grangette<br/>74200 Thonon-les-Bains</p>
-                    <p>Tél : 08 92 70 03 17<br/>Fax : 04 56 44 80 14</p>
-                    <a href="http://www.ibis.com/fr/hotel-6392-ibis-budget-thonon-les-bains-ex-etap-hotel/index.shtml" class="">http://www.ibis.com/fr/</a>
-                    <p>A partir de 51,00€<br/>Capacité 88 chambres</p>
-                </div>
-                <!--<div class="small-5 large-6 columns right-align right">-->
-                    <!--<iframe href="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"-->
-                            <!--width="400" height="300" frameborder="0" style="border:0"></iframe>-->
-                <!--</div>-->
-            </div>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns">
+        <div class="large-4 medium-6 small-12 column">
+            <p>Hôtel le Comte Rouge<br/>10 bd du Canal<br/>74200 Thonon-les-Bains</p>
+            <p>Tél : 04 50 71 06 04<br/>Fax : 04 69 96 76 58</p>
+            <a href="http://www.lecomterouge.com/" class="">http://www.lecomterouge.com/</a>
+            <p>A partir de 55,00€<br/>Capacité 16 chambres</p>
         </div>
+
+        <!-- <div class="right large-6 medium-6 hide-for-small-only column">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"
+                     width="400" height="300" frameborder="0" style="border:0"></iframe>
+         </div>
+         <div class="show-for-small-only small-12 column">
+             <a src="">Afficher la carte</a>
+         </div>-->
     </div>
-    <div class="row">
-        <div class="panel" style="height:280px;">
-            <div styles="margin-top:500px;">
-                <div class="small-2 large-4 columns">
-                    <p>Hôtel Café du Palais<br/>11 bd Général Dessaix<br/>74200 Thonon-les-Bains</p>
-                    <p>Tél : 04 50 71 32 94<br/>Fax : 04 50 71 76 80</p>
-                    <a href="http://www.hotelcafedupalais.com/" class="">http://www.hotelcafedupalais.com/</a>
-                    <p>A partir de 62,00€<br/>Capacité 12 chambres</p>
-                </div>
-                <!--<div class="small-5 large-6 columns right-align right">-->
-                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"-->
-                            <!--width="400" height="300" frameborder="0" style="border:0"></iframe>-->
-                <!--</div>-->
-            </div>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns">
+        <div class="large-4 medium-6 small-12 column">
+            <p>Gîte Au Fil de l’Eau<br/>“La Rochette”<br/>74890 Lully</p>
+            <p>Tél 04 50 36 34 30</p>
+            <a href="http://www.au-fil-de-leau.com/" class="">http://www.au-fil-de-leau.com/</a>
+            <p>A partir de 55,00€<br/>Capacité d’hébergement 4</p>
         </div>
+
+        <!-- <div class="right large-6 medium-6 hide-for-small-only column">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"
+                     width="400" height="300" frameborder="0" style="border:0"></iframe>
+         </div>
+         <div class="show-for-small-only small-12 column">
+             <a src="">Afficher la carte</a>
+         </div>-->
     </div>
-    <div class="row">
-        <div class="panel" style="height:280px;">
-            <div styles="margin-top:500px;">
-                <div class="small-2 large-4 columns">
-                    <p>Hôtel A l’Ombre des Marronniers<br/>17 place de Crête<br/>74200 Thonon-les-Bains</p>
-                    <p>Tél : 04 50 71 26 18<br/>Fax : 04 50 26 27 47</p>
-                    <a href="http://www.hotellesmarronniers.com/" class="">http://www.hotellesmarronniers.com/</a>
-                    <p>A partir de 60,00€<br/>Capacité 24 chambres</p>
-                </div>
-                <!--<div class="small-5 large-6 columns right-align right">-->
-                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"-->
-                            <!--width="400" height="300" frameborder="0" style="border:0"></iframe>-->
-                <!--</div>-->
-            </div>
-        </div>
+</div>
+<div class="row">
+    <div class="panel" id="gitesprochedebons">
+        <h5>b. Gîtes proches de Bons</h5>
     </div>
-    <div class="row">
-        <div class="panel" style="height:280px;">
-            <div styles="margin-top:500px;">
-                <div class="small-2 large-4 columns">
-                    <p>Hôtel le Comte Rouge<br/>10 bd du Canal<br/>74200 Thonon-les-Bains</p>
-                    <p>Tél : 04 50 71 06 04<br/>Fax : 04 69 96 76 58</p>
-                    <a href="http://www.lecomterouge.com/" class="">http://www.lecomterouge.com/</a>
-                    <p>A partir de 55,00€<br/>Capacité 16 chambres</p>
-                </div>
-                <!--<div class="small-5 large-6 columns right-align right">-->
-                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"-->
-                            <!--width="400" height="300" frameborder="0" style="border:0"></iframe>-->
-                <!--</div>-->
-            </div>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns">
+        <div class="large-4 medium-6 small-12 column">
+            <p>Gîte A l’ombre des kiwis<br/>1073 route des crapons<br/>74140 Ballaison</p>
+            <p>Tél: 04 50 85 25 24<br/>Tél: 06 22 42 80 24</p>
+            <a href="http://www.alombredeskiwis.com/" class="">http://www.alombredeskiwis.com/</a>
+            <p>Capacité d’hébergement 12</p>
         </div>
+
+        <!-- <div class="right large-6 medium-6 hide-for-small-only column">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"
+                     width="400" height="300" frameborder="0" style="border:0"></iframe>
+         </div>
+         <div class="show-for-small-only small-12 column">
+             <a src="">Afficher la carte</a>
+         </div>-->
     </div>
-    <div class="row">
-        <div class="panel" id="gitesprochedebons">
-            <h5>b. Gîtes proches de Bons</h5>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns">
+        <div class="large-4 medium-6 small-12 column">
+            <p>Chambres d’hôtes Le pré d’Emma<br/>Les Parrets</p>
+            <p>Tél: 04 50 31 75 18</p>
+            <a href="http://www.chambres-hotes-leman.com/" class="">http://www.chambres-hotes-leman.com/</a>
+            <p>Capacité 8 personnes</p>
         </div>
+
+        <!-- <div class="right large-6 medium-6 hide-for-small-only column">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"
+                     width="400" height="300" frameborder="0" style="border:0"></iframe>
+         </div>
+         <div class="show-for-small-only small-12 column">
+             <a src="">Afficher la carte</a>
+         </div>-->
     </div>
-    <div class="row">
-        <div class="panel" style="height:280px;">
-            <div styles="margin-top:500px;">
-                <div class="small-2 large-4 columns">
-                    <p>Gîte Au Fil de l’Eau<br/>“La Rochette”<br/>74890 Lully</p>
-                    <p>Tél 04 50 36 34 30</p>
-                    <a href="http://www.au-fil-de-leau.com/" class="">http://www.au-fil-de-leau.com/</a>
-                    <p>A partir de 55,00€<br/>Capacité d’hébergement 4</p>
-                </div>
-                <!--<div class="small-5 large-6 columns right-align right">-->
-                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"-->
-                            <!--width="400" height="300" frameborder="0" style="border:0"></iframe>-->
-                <!--</div>-->
-            </div>
-        </div>
+</div>
+
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns" id="campingprochedebons">
+        <h5>c. Campings proches de Bons</h5>
     </div>
-    <div class="row">
-        <div class="panel" style="height:280px;">
-            <div styles="margin-top:500px;">
-                <div class="small-2 large-4 columns">
-                    <p>Gîte A l’ombre des kiwis<br/>1073 route des crapons<br/>74140 Ballaison</p>
-                    <p>Tél: 04 50 85 25 24<br/>Tél: 06 22 42 80 24</p>
-                    <a href="http://www.alombredeskiwis.com/" class="">http://www.alombredeskiwis.com/</a>
-                    <p>Capacité d’hébergement 12</p>
-                </div>
-                <!--<div class="small-5 large-6 columns right-align right">-->
-                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"-->
-                            <!--width="400" height="300" frameborder="0" style="border:0"></iframe>-->
-                <!--</div>-->
-            </div>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns">
+        <div class="large-4 medium-6 small-12 column">
+            <p>Camping Saint Disdille<br/>117 avenue de Saint Disdille<br/>74200 Thonons-les-Bains</p>
+            <p>Tél: 04 50 71 14 11<br>Fax : 04 50 71 93 67</p>
+            <a href="http://www.disdille.com/" class="">http://www.disdille.com/</a>
+            <p>A partir de 15,00€</p>
         </div>
+
+        <!-- <div class="right large-6 medium-6 hide-for-small-only column">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"
+                     width="400" height="300" frameborder="0" style="border:0"></iframe>
+         </div>
+         <div class="show-for-small-only small-12 column">
+             <a src="">Afficher la carte</a>
+         </div>-->
     </div>
-    <div class="row">
-        <div class="panel" style="height:280px;">
-            <div styles="margin-top:500px;">
-                <div class="small-2 large-4 columns">
-                    <p>Chambres d’hôtes Le pré d’Emma<br/>Les Parrets</p>
-                    <p>Tél: 04 50 31 75 18</p>
-                    <a href="http://www.chambres-hotes-leman.com/" class="">http://www.chambres-hotes-leman.com/</a>
-                    <p>Capacité 8 personnes</p>
-                </div>
-                <!--<div class="small-5 large-6 columns right-align right">-->
-                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"-->
-                            <!--width="400" height="300" frameborder="0" style="border:0"></iframe>-->
-                <!--</div>-->
-            </div>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns">
+        <div class="large-4 medium-6 small-12 column">
+            <p>Camping Le Lac Noir<br/>28 avenue de Sénévullaz<br/>74200 Thonons-les-Bains</p>
+            <p>Tél : 04 50 26 07 28<br>Fax : 04 50 71 12 46</p>
+            <a href="http://www.camping-lelacnoir.fr/" class="">http://www.camping-lelacnoir.fr/</a>
+            <p>A partir de 10,00€</p>
         </div>
+
+        <!-- <div class="right large-6 medium-6 hide-for-small-only column">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"
+                     width="400" height="300" frameborder="0" style="border:0"></iframe>
+         </div>
+         <div class="show-for-small-only small-12 column">
+             <a src="">Afficher la carte</a>
+         </div>-->
     </div>
-    <div class="row">
-        <div class="panel" id="campingprochedebons">
-            <h5>c. Campings proches de Bons</h5>
-        </div>
+</div>
+
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns" id="procheduchateau">
+        <h4>2. Dans les environs du château</h4>
     </div>
-    <div class="row">
-        <div class="panel" style="height:280px;">
-            <div styles="margin-top:500px;">
-                <div class="small-2 large-4 columns">
-                    <p>Camping Saint Disdille<br/>117 avenue de Saint Disdille<br/>74200 Thonons-les-Bains</p>
-                    <p>Tél: 04 50 71 14 11<br>Fax : 04 50 71 93 67</p>
-                    <a href="http://www.disdille.com/" class="">http://www.disdille.com/</a>
-                    <p>A partir de 15,00€</p>
-                </div>
-                <!--<div class="small-5 large-6 columns right-align right">-->
-                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"-->
-                            <!--width="400" height="300" frameborder="0" style="border:0"></iframe>-->
-                <!--</div>-->
-            </div>
-        </div>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns" id="gitesprocheduchateau">
+        <h5>a. Hotels proches du château</h5>
     </div>
-    <div class="row">
-        <div class="panel" style="height:280px;">
-            <div styles="margin-top:500px;">
-                <div class="small-2 large-4 columns">
-                    <p>Camping Le Lac Noir<br/>28 avenue de Sénévullaz<br/>74200 Thonons-les-Bains</p>
-                    <p>Tél : 04 50 26 07 28<br>Fax : 04 50 71 12 46</p>
-                    <a href="http://www.camping-lelacnoir.fr/" class="">http://www.camping-lelacnoir.fr/</a>
-                    <p>A partir de 10,00€</p>
-                </div>
-                <!--<div class="small-5 large-6 columns right-align right">-->
-                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"-->
-                            <!--width="400" height="300" frameborder="0" style="border:0"></iframe>-->
-                <!--</div>-->
-            </div>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns">
+        <div class="large-4 medium-6 small-12 column">
+            <p>F1<br/>Zone artisanale les Grands Champs Sud<br/>1168 route de la Gare<br/>74580 Viry</p>
+            <p>Tél : 08 91 70 52 55</p>
         </div>
+
+        <!-- <div class="right large-6 medium-6 hide-for-small-only column">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"
+                     width="400" height="300" frameborder="0" style="border:0"></iframe>
+         </div>
+         <div class="show-for-small-only small-12 column">
+             <a src="">Afficher la carte</a>
+         </div>-->
     </div>
-    <div class="row">
-        <div class="panel" id="procheduchateau">
-            <h4>2. Dans les environs du château</h4>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns">
+        <div class="large-4 medium-6 small-12 column">
+            <p>Savoie Hotel<br/>9 Avenue Louis Armand<br/>74160 Saint Julien en genevois</p>
+            <p>Tél : 04 50 49 03 55</p>
+            <p>Chambres double 75-98€</p>
         </div>
+
+        <!-- <div class="right large-6 medium-6 hide-for-small-only column">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"
+                     width="400" height="300" frameborder="0" style="border:0"></iframe>
+         </div>
+         <div class="show-for-small-only small-12 column">
+             <a src="">Afficher la carte</a>
+         </div>-->
     </div>
-	<div class="row">
-        <div class="panel" id="gitesprocheduchateau">
-            <h5>a. Hotels proches du château</h5>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns">
+        <div class="large-4 medium-6 small-12 column">
+            <p>Ibis Hotel<br/>500 ROUTE DES ENVIGNES<br/>74160 - NEYDENSFRANCE</p>
+            <p>Tél : 04 50 49 80 36<br/>Fax: 04 50 84 65 62</p>
+            <p>à partir de 95€</p>
         </div>
+
+        <!-- <div class="right large-6 medium-6 hide-for-small-only column">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"
+                     width="400" height="300" frameborder="0" style="border:0"></iframe>
+         </div>
+         <div class="show-for-small-only small-12 column">
+             <a src="">Afficher la carte</a>
+         </div>-->
     </div>
-	<div class="row">
-        <div class="panel" style="height:280px;">
-            <div styles="margin-top:500px;">
-                <div class="small-2 large-4 columns">
-                    <p>F1<br/>Zone artisanale les Grands Champs Sud<br/>1168 route de la Gare<br/>74580 Viry</p>
-                    <p>Tél : 08 91 70 52 55</p>
-                </div>
-                <!--<div class="small-5 large-6 columns right-align right">-->
-                <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"-->
-                <!--width="400" height="300" frameborder="0" style="border:0"></iframe>-->
-                <!--</div>-->
-            </div>
-        </div>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns" id="gitesprocheduchateau">
+        <h5>b. Gites proches du château</h5>
     </div>
-    <div class="row">
-        <div class="panel" style="height:280px;">
-            <div styles="margin-top:500px;">
-                <div class="small-2 large-4 columns">
-                    <p>Savoie Hotel<br/>9 Avenue Louis Armand<br/>74160 Saint Julien en genevois</p>
-                    <p>Tél : 04 50 49 03 55</p>
-                    <p>Chambres double 75-98€</p>
-                </div>
-                <!--<div class="small-5 large-6 columns right-align right">-->
-                <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"-->
-                <!--width="400" height="300" frameborder="0" style="border:0"></iframe>-->
-                <!--</div>-->
-            </div>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns">
+        <div class="large-4 medium-6 small-12 column">
+            <p>Laire de Mary, Mary-Pierre et Christian Luthi, Hameau de Malagny<br/> 43, route de Sezegnin<br/>74580 Viry</p>
+            <p>Tél : 04 50 04 81 75<br>Fax : 04 50 71 12 46</p>
+            <p>A partir de 75,00€<br/>2 chambres 2 personnes</p>
         </div>
+
+        <!-- <div class="right large-6 medium-6 hide-for-small-only column">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"
+                     width="400" height="300" frameborder="0" style="border:0"></iframe>
+         </div>
+         <div class="show-for-small-only small-12 column">
+             <a src="">Afficher la carte</a>
+         </div>-->
     </div>
-    <div class="row">
-        <div class="panel" style="height:280px;">
-            <div styles="margin-top:500px;">
-                <div class="small-2 large-4 columns">
-                    <p>Ibis Hotel<br/>500 ROUTE DES ENVIGNES<br/>74160 - NEYDENSFRANCE</p>
-                    <p>Tél : 04 50 49 80 36<br/>Fax: 04 50 84 65 62</p>
-                    <p>à partir de 95€</p>
-                </div>
-                <!--<div class="small-5 large-6 columns right-align right">-->
-                <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"-->
-                <!--width="400" height="300" frameborder="0" style="border:0"></iframe>-->
-                <!--</div>-->
-            </div>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns">
+        <div class="large-4 medium-6 small-12 column">
+            <p>La Ferme de Cortanges, Rachel Schneider<br/>429, Route de Cortenges<br/>74350 Cernex</p>
+            <p>Tél : 04 50 77 79 68<br>Mob : 06 07 44 08 43</p>
+            <p>A partir de 88-96€/nuit<br/>5 Chambres 2 personnes</p>
         </div>
+
+        <!-- <div class="right large-6 medium-6 hide-for-small-only column">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"
+                     width="400" height="300" frameborder="0" style="border:0"></iframe>
+         </div>
+         <div class="show-for-small-only small-12 column">
+             <a src="">Afficher la carte</a>
+         </div>-->
     </div>
-    <div class="row">
-        <div class="panel" id="gitesprocheduchateau">
-            <h5>b. Gites proches du château</h5>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns">
+        <div class="large-4 medium-6 small-12 column">
+            <p>Le refuge de la ferme, Sandra Sagetat & Jean-Louis Clavel<br/>953, Route de Norcier<br/>74160 Saint Julien en Genevois</p>
+            <p>Tél : 04 50 35 95 79<br>Mob : 06 95 94 70 43</p>
+            <p>Maison 5 places 175€/2 nuits</p>
         </div>
+
+        <!-- <div class="right large-6 medium-6 hide-for-small-only column">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"
+                     width="400" height="300" frameborder="0" style="border:0"></iframe>
+         </div>
+         <div class="show-for-small-only small-12 column">
+             <a src="">Afficher la carte</a>
+         </div>-->
     </div>
-    <div class="row">
-        <div class="panel" style="height:280px;">
-            <div styles="margin-top:500px;">
-                <div class="small-2 large-4 columns">
-                    <p>Laire de Mary, Mary-Pierre et Christian Luthi, Hameau de Malagny<br/> 43, route de Sezegnin<br/>74580 Viry</p>
-                    <p>Tél : 04 50 04 81 75<br>Fax : 04 50 71 12 46</p>
-                    <p>A partir de 75,00€<br/>2 chambres 2 personnes</p>
-                </div>
-                <!--<div class="small-5 large-6 columns right-align right">-->
-                <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"-->
-                <!--width="400" height="300" frameborder="0" style="border:0"></iframe>-->
-                <!--</div>-->
-            </div>
+</div>
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns">
+        <div class="large-4 medium-6 small-12 column">
+            <p>Auberge des vieux tilleuls, chef lieu<br/>74580 Viry</p>
+            <p>Tél : 08 99 18 76 99</p>
         </div>
+
+        <!-- <div class="right large-6 medium-6 hide-for-small-only column">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"
+                     width="400" height="300" frameborder="0" style="border:0"></iframe>
+         </div>
+         <div class="show-for-small-only small-12 column">
+             <a src="">Afficher la carte</a>
+         </div>-->
     </div>
-    <div class="row">
-        <div class="panel" style="height:280px;">
-            <div styles="margin-top:500px;">
-                <div class="small-2 large-4 columns">
-                    <p>La Ferme de Cortanges, Rachel Schneider<br/>429, Route de Cortenges<br/>74350 Cernex</p>
-                    <p>Tél : 04 50 77 79 68<br>Mob : 06 07 44 08 43</p>
-                    <p>A partir de 88-96€/nuit<br/>5 Chambres 2 personnes</p>
-                </div>
-                <!--<div class="small-5 large-6 columns right-align right">-->
-                <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"-->
-                <!--width="400" height="300" frameborder="0" style="border:0"></iframe>-->
-                <!--</div>-->
-            </div>
-        </div>
+</div>
+
+<div class="row panel">
+    <div class="large-12 medium-12 small-12 columns" id="hotelsprocheduchateau">
+        <h5> c. Campings proches du château</h5>
     </div>
-    <div class="row">
-        <div class="panel" style="height:280px;">
-            <div styles="margin-top:500px;">
-                <div class="small-2 large-4 columns">
-                    <p>Le refuge de la ferme, Sandra Sagetat & Jean-Louis Clavel<br/>953, Route de Norcier<br/>74160 Saint Julien en Genevois</p>
-                    <p>Tél : 04 50 35 95 79<br>Mob : 06 95 94 70 43</p>
-                    <p>Maison 5 places 175€/2 nuits</p>
-                </div>
-                <!--<div class="small-5 large-6 columns right-align right">-->
-                <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"-->
-                <!--width="400" height="300" frameborder="0" style="border:0"></iframe>-->
-                <!--</div>-->
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="panel" style="height:280px;">
-            <div styles="margin-top:500px;">
-                <div class="small-2 large-4 columns">
-                    <p>Auberge des vieux tilleuls, chef lieu<br/>74580 Viry</p>
-                    <p>Tél : 08 99 18 76 99</p>
-                </div>
-                <!--<div class="small-5 large-6 columns right-align right">-->
-                <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2765.8698034715603!2d6.040197599999999!3d46.113501250000006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf3833870aaf98f82!2sChateau+De+Moulinsard!5e0!3m2!1sen!2sus!4v1395613763038"-->
-                <!--width="400" height="300" frameborder="0" style="border:0"></iframe>-->
-                <!--</div>-->
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="panel" id="hotelsprocheduchateau">
-            <h5> c. Campings proches du château</h5>
-        </div>
-    </div>    
+</div>
 </div>
 
 <script src="../js/vendor/jquery.js"></script>
