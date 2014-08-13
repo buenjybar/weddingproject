@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en"> <![endif]-->
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -24,7 +25,7 @@
                 <img class="large-12 medium-centered medium-12 small-12 column" src="../images/logo-small.png"/>
             </div>
             <div class="header large-12 medium-12 small-12">
-                <img class="large-centered large-4 medium-12 small-12 column"  src="../images/title-2.png"/>
+                <img class="large-centered large-4 medium-12 small-12 column" src="../images/title-2.png"/>
             </div>
         </div>
     </div>
@@ -56,13 +57,57 @@
 
     <div class="row panel">
         <div class="large-12 medium-12 small-12 columns">
-            <p> En cours de construction </p>
+            <div class="row hide" id="alert-msg">
+                <div data-alert class="alert-box alert ">
+                    Mot de passe incorrect.
+                    <a href="#" class="close">&times;</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="large-12 medium-12 small-12 columns">
+                    <h3>Enregistrer une photo</h3>
+                </div>
+                <div class="large-12 medium-12 small-12 columns">
+                    <div class="row collapse">
+                        <div class="large-2 medium-2 small-6 columns">
+                            <p>Mot de passe :</p>
+                        </div>
+                        <div class="large-10 medium-10 small-6 columns">
+                            <input type="password" id="password" name="password" value=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-centered large-2 medium-centered medium-2 small-centered small-4 columns">
+                    <button class="button postfix" onclick="gotoupload();"/>
+                    Entrer</button>
+                </div>
+            </div>
         </div>
     </div>
+
+    <div class="row panel">
+
+        <div class="row">
+            <div class="large-12 medium-12 small-12 columns">
+                <h3>Acceder a la gallerie photo</h3>
+            </div>
+            <div class="large-centered large-2 medium-centered medium-2 small-centered small-4 columns">
+                <button class="button postfix" onclick="gotogallery();">Gallerie</button>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 
 <script src="../js/vendor/jquery.js"></script>
 <script src="../js/foundation.min.js"></script>
+<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+
+<script src="../js/script.js"></script>
 <script>
     $(document).foundation();
 </script>
