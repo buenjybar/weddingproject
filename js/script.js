@@ -18,10 +18,10 @@ function gotoupload() {
         url: 'http://localhost:8090/login',
         type: 'POST',
         content: 'application/json',
-        dataType: 'text',
-        data: JSON.stringify({
+        dataType: 'json',
+        data: {
             password: pass
-        }),
+        },
         success: function (data, textStatus, xhr) {
             console.log('Failure', data);
         },

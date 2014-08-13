@@ -1,7 +1,7 @@
 var express = require("express"),
     app = express(),
-    bodyParser = require('body-parser'),
     qt = require('quickthumb'),
+    crypto = require('crypto'),
     formidable = require('formidable'),
     util = require('util'),
     fs = require('fs-extra'),
@@ -10,11 +10,20 @@ var express = require("express"),
 
 app.use(qt.static(__dirname + '/'));
 //app.use(express.bodyParser()); NOT RECOMMENDED ANYMORE
-app.use(bodyParser.json());
+app.use(express.bodyParser());
 //app.use(express.cookieParser());
 app.use(express.session({secret: 'JeanGabSession'}));
 app.use(gallery.middleware({static: 'resources', directory: '/uploads', rootURL: "/gallery"}));
 app.set('view engine', 'ejs');
+
+var m1 = crypto.createHash('md5');
+m1.update('test');
+var TestPasswd = m1.digest('hex');
+
+var m2 = crypto.createHash('md5');
+m2.update('23082014');
+var Passwd = m2.digest('hex');
+
 
 function checkAuth(req, res, next) {
     if (!req.session.user_id) {
@@ -25,27 +34,23 @@ function checkAuth(req, res, next) {
 }
 
 //authentification
-app.post('/login', function (req, res) {
-    var form = new formidable.IncomingForm();
-    form.parse(req, function (req, res) {
-        console.log(req);
-        console.log(req.body);
-        var post = req.body;
-
-        if (post == null){
-            console.log('empty body');
-            return;
-        }
-        if (post.password === '23082014' ||post.password === 'test' ) {
-            console.log('logged');
-            req.session.user_id = 123;
-            res.redirect('/form');
-            res.send('ok');
-        } else {
-            console.log('bad password');
-            res.send('Mot de passe invalid');
-        }
-    })
+app.post('/login', function (req, res) {    
+    var post = req.body;
+    
+    if (post == null){
+        console.log('DEBUG: empty body');
+        res.send('invalid request');
+        return;
+    }
+    if (post.password === TestPasswd || post.password === Passwd ) {
+        console.log('DEBUG: logged');
+        req.session.user_id = 123;
+        //res.redirect('/form');
+        res.json({ok:true});//res.semd(200);
+    } else {
+        console.log('DEBUG: bad password');
+        res.send('Mot de passe invalid');
+    }
 });
 
 // Show the upload form

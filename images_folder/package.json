@@ -10,6 +10,8 @@
     "quickthumb": "0.0.x"
   },
   "devDependencies": {
-    "body-parser": "~1.6.3"
+    "body-parser": "~1.6.3",
+    "node-gallery": "^0.3.2",
+    "ejs": "^1.0.0"
   }
 }
