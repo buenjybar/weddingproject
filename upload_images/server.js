@@ -5,7 +5,22 @@ var formidable = require('formidable'),
 
 http.createServer(function(req, res) {
 	if (req.url == '/subscribe' && req.method.toLowerCase() == 'post') {
+	    var form = new formidable.IncomingForm();
 		
+		form.parse(req, function(err, fields, files) {
+			var data = fields.email + '\n';
+			fs.appendFile('listemail' ,data, function(err){
+				if(err){
+					console.log(err);
+				}
+				else {
+					res.writeHead(200, {'content-type': 'text/html'});
+					res.end(
+						  '<meta http-equiv="refresh" content="0; url=http://localhost:8080/" />'
+					  );
+				  }
+			})
+		  })
 	}
 	
   if (req.url == '/upload' && req.method.toLowerCase() == 'post') {
@@ -48,7 +63,12 @@ http.createServer(function(req, res) {
     '<form action="/upload" enctype="multipart/form-data" method="post">'+
     '<input type="file" name="upload" multiple="multiple" accept="image/x-png image/gif image/jpeg"><br>'+
     '<input type="submit" value="Transferer">'+
-    '</form>'
+    '</form>'+
+	'Si vous souhaitez recevoir les nouvelles photos par email, veuillew entrer votre adresse email.'+
+	'<form action="/subscribe" enctype="multipart/form-data" method="post">'+
+	'<input type="email" name="email"><br>'+
+	'<input type="submit" value="Souscrire">'+
+	'</form>'
   );
 }).listen(8080);
 console.log("server started port 8080")
