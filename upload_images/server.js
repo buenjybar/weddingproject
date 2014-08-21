@@ -16,8 +16,17 @@ http.createServer(function(req, res) {
 				else {
 					res.writeHead(200, {'content-type': 'text/html'});
 					res.end(
-						  '<meta http-equiv="refresh" content="0; url=http://localhost:8080/" />'
-					  );
+								  '<meta http-equiv="refresh" content="0; url=http://localhost:8080/" />'
+							  );
+					
+					/*
+					res.end(
+						   '<!DOCTYPE html><html class="no-js" lang="en"><head>'+
+						  '<meta http-equiv="refresh" content="5;URL=http://localhost:8080/" />'+
+						  '</head><body>'+
+						  '<h1>Souscription enregistree</h1>'+
+						  '</body></head></html>'
+					  );*/
 				  }
 			})
 		  })
@@ -64,7 +73,7 @@ http.createServer(function(req, res) {
     '<input type="file" name="upload" multiple="multiple" accept="image/x-png image/gif image/jpeg"><br>'+
     '<input type="submit" value="Transferer">'+
     '</form>'+
-	'Si vous souhaitez recevoir les nouvelles photos par email, veuillew entrer votre adresse email.'+
+	'Si vous souhaitez recevoir les nouvelles photos par email, veuillez entrer votre adresse email.'+
 	'<form action="/subscribe" enctype="multipart/form-data" method="post">'+
 	'<input type="email" name="email"><br>'+
 	'<input type="submit" value="Souscrire">'+
