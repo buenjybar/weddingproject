@@ -2,6 +2,8 @@
   "name": "webproj",
   "version": "0.0.3",
   "devDependencies": {
+    "formidable": "^1.0.15",
+    "fs-extra": "^0.11.0",
     "grunt": "~0.4.2",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-concat": "~0.3.0",
