@@ -55,11 +55,11 @@
         </nav>
     </div>
 
-    <div class="row panel">
+    <div class="row panel" id="upload">
         <div class="large-12 medium-12 small-12 columns">
             <div class="row hide" id="alert-msg">
                 <div data-alert class="alert-box alert ">
-                    Mot de passe incorrect.
+                    <span>impossible de se connecter au serveur.</span>
                     <a href="#" class="close">&times;</a>
                 </div>
             </div>
@@ -70,46 +70,42 @@
                 </div>
                 <div class="large-12 medium-12 small-12 columns">
                     <div class="row collapse">
-                        <div class="large-2 medium-2 small-6 columns">
+                        <div class="large-2 medium-2 small-12 columns">
                             <p>Mot de passe :</p>
                         </div>
-                        <div class="large-10 medium-10 small-6 columns">
-                            <input type="password" id="password" name="password" value=""/>
+                        <div class="large-10 medium-10 small-12 columns">
+                            <input type="password" id="password" name="password" value="" placeHolder="date du mariage au format jjmmaaaa"/>
                         </div>
                     </div>
                 </div>
             </div>
+            
             <div class="row">
-                <div class="large-centered large-2 medium-centered medium-2 small-centered small-4 columns">
+                <div class="large-centered large-2 medium-centered medium-2 small-centered small-6 columns">
                     <button class="button postfix" onclick="gotoupload();"/>
                     Entrer</button>
                 </div>
             </div>
         </div>
     </div>
+    
+    <div id="formContent">
+    </div>
 
     <div class="row panel">
-
         <div class="row">
             <div class="large-12 medium-12 small-12 columns">
-                <h3>Acceder a la gallerie photo</h3>
+                <h3>Acceder a la galerie photo</h3>
             </div>
-            <div class="large-centered large-2 medium-centered medium-2 small-centered small-4 columns">
-                <button class="button postfix" onclick="gotogallery();">Gallerie</button>
+            <div class="large-centered large-2 medium-centered medium-2 small-centered small-6 columns">
+                <button class="button postfix" onclick="gotogallery();">Galerie</button>
             </div>
         </div>
     </div>
-
-
 </div>
-
-<form action="localhost:8080/upload" enctype="multipart/form-data" method="post">
-	<input type="file" name="upload" multiple="multiple" accept="image/x-png, image/gif, image/jpeg">
-	<input type="submit" value="Upload" >
-</form>
-
-
-
+    
+</div>
+    
 <script src="../js/vendor/jquery.js"></script>
 <script src="../js/foundation.min.js"></script>
 <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
