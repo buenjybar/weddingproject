@@ -1,4 +1,4 @@
-var domain = '192.168.1.81';
+var domain = '54.201.238.28';
 var portLogin = 8082;
 var portApp = 8081
 
