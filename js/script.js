@@ -1,3 +1,4 @@
+var domain = '192.168.1.81';
 var portLogin = 8082;
 var portApp = 8081
 
@@ -27,7 +28,7 @@ function gotoupload() {
     var pass = md5($("#password").val());
 
     $.ajax({
-        url: 'http://localhost:'+portLogin+'/login',
+        url: 'http://'+domain+':'+portLogin+'/login',
         type: 'POST',
         content: 'application/json',
         dataType: 'html',

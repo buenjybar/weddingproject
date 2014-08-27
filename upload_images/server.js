@@ -4,15 +4,39 @@ var formidable = require('formidable'),
 	fs = require('fs-extra');
 
 var port = 8081;
+var domain = 'localhost';
 var imagePath = './uploads';
 var emailList = 'listemail';
+
+function getSuccessPage(){
+    return [
+        '<html>',
+        '<head>',
+        '<script>',
+        'function loaded()',
+        '{',
+        '    window.setTimeout(CloseMe, 500);',
+        '}',
+        '',
+        'function CloseMe() ',
+        '{',
+        '    window.close();',
+        '}',
+        '</script>',
+        '</head>',
+        '<body onLoad="loaded()">',
+        '<h3>operation reussite</h3>',
+        '</body>',
+        '</html>'
+    ].join('');   
+    
+}
 
 http.createServer(function(req, res) {
 	if (req.url == '/subscribe' && req.method.toLowerCase() == 'post') {
 	    var form = new formidable.IncomingForm();
 		
 		form.parse(req, function(err, fields, files) {
-            console.log(fields.email,' ', fields)
             if(fields.email == null || fields.email.length < 1) return;
 			var data = fields.email + ", ";
 			fs.appendFile(emailList ,data, function(err){
@@ -21,8 +45,7 @@ http.createServer(function(req, res) {
 				}
 				else {
 					res.writeHead(200, {'content-type': 'text/html'});
-					res.end()
-                    //res.end(refreshRedirection);
+					res.end(getSuccessPage());
 				  }
 			})
 		  });
@@ -35,9 +58,7 @@ http.createServer(function(req, res) {
       
     form.parse(req, function(err, fields, files) {
       res.writeHead(200, {'content-type': 'text/html'});
-        res.end()
-        //res.redirect("back");
-	  //res.end(refreshRedirection);
+        res.end(getSuccessPage());
     });
 
 	form.on('end', function(fields, files){
@@ -51,7 +72,7 @@ http.createServer(function(req, res) {
 			if(err){
 				console.log(err);
 			}else{
-				console.log('success');
+				console.log('image added: ', file_name);
 			}
 		});
 		}
@@ -59,19 +80,5 @@ http.createServer(function(req, res) {
 	
     return;
   }
-  // show a file upload form
-  res.writeHead(200, {'content-type': 'text/html'});
-  res.end(
-	'Veuillez selection les images a transferer '+
-    '<form action="/upload" enctype="multipart/form-data" method="post" target="_blank">'+
-    '<input type="file" name="upload" multiple="multiple" accept="image/x-png image/gif image/jpeg"><br>'+
-    '<input type="submit" value="Transferer">'+
-    '</form>'+
-	'Si vous souhaitez recevoir les nouvelles photos par email, veuillez entrer votre adresse email.'+
-	'<form action="/subscribe" enctype="multipart/form-data" method="post">'+
-	'<input type="email" name="email"><br>'+
-	'<input type="submit" value="Souscrire">'+
-	'</form>'
-  );
 }).listen(port);
 console.log("server started port "+port)
