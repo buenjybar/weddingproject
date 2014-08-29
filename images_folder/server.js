@@ -11,14 +11,18 @@ var express = require("express"),
 
 
 var port = 8082, port2 = 8081;
-var domain = '192.168.1.81';
+var domain = 'locahost';
+var picturedir = '../upload_images/uploads';
+var symbolicpath = '../upload_images/uploads';
 
 app.use(qt.static(__dirname + '/'));
 //app.use(express.bodyParser()); NOT RECOMMENDED ANYMORE
 app.use(express.bodyParser());
 //app.use(express.cookieParser());
 app.use(express.session({secret: 'JeanGabSession'}));
-app.use(gallery.middleware({static: 'resources', directory: '../upload_images/uploads', rootURL: "/gallery"}));
+//app.use(gallery.middleware({static: 'resources', directory: '../upload_images/uploads', rootURL: "/gallery"}));
+
+app.use(gallery.middleware({static: 'resources', directory: picturedir, rootURL: "/gallery"}));
 app.set('view engine', 'ejs');
 app.set(cors());
 
@@ -92,6 +96,29 @@ function getUploadRespond(){
        getEmailHTML()
     ].join('');
 }    
+
+function walk (dir, done) {
+  var results = [];
+  fs.readdir(dir, function(err, list) {
+    if (err) return done(err);
+    var pending = list.length;
+    if (!pending) return done(null, results);
+    list.forEach(function(file) {
+      file = dir + '/' + file;
+      fs.stat(file, function(err, stat) {
+        if (stat && stat.isDirectory()) {
+          walk(file, function(err, res) {
+            results = results.concat(res);
+            if (!--pending) done(null, results);
+          });
+        } else {
+          results.push(file);
+          if (!--pending) done(null, results);
+        }
+      });
+    });
+  });
+}
     
 //authentification
 app.post('/login', function (req, res) {    
@@ -120,10 +147,21 @@ app.post('/login', function (req, res) {
     }
 });
 
-app.get('/gallery*', function (req, res) {
+app.post('/gallery', function (req, res) {
     var data = req.gallery;
     data.layout = false;
-    res.render(data.type + '.ejs', data);
+    prepareRespond(res);
+    
+    walk(picturedir, function(err, list){
+        if(list == null) { res.send([]); return};
+        var results= list.filter(function(file){
+            return file.match(/(\.JPG|\.jpg|\.png|\.bmp)$/)
+            })
+            .map(function(file){
+                return file.replace( picturedir, symbolicpath);
+            });
+        res.send(results);
+    });
 });
 
 app.listen(port);

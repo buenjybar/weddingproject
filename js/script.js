@@ -1,6 +1,7 @@
-var domain = '54.201.238.28';
+var domain = 'localhost';
 var portLogin = 8082;
-var portApp = 8081
+var portApp = 8081;
+var firstTime = true;
 
 function passwordCheck() {
     var input = document.getElementById('password');
@@ -68,5 +69,34 @@ function postEmail(){
 
 function gotogallery(){
 
-
+    if(firstTime) {
+        Galleria.loadTheme('../js/galleria/themes/classic/galleria.classic.min.js');
+        Galleria.run('.galleria');
+        firstTime = false;
+    }
+    
+    $.ajax({
+         url: 'http://'+domain+':'+portLogin+'/gallery',
+        type: 'POST',
+        content: 'application/html',
+        dataType: 'html',
+        crossDomain : true,
+        data: {},
+        success : function(data, textStatus, xhr){
+            data = JSON.parse(data);
+            if(data ==null || data.length == null) return;
+            
+            var html = [];
+            data.forEach(function(element){
+                var image = document.createElement('img');
+                image.src = element;
+                html.push(image);
+            });
+            $('#imageContainer').append(html);
+            $('#imageContainer').removeClass('hide');
+            $(".row.panel").addClass('hide');
+        },
+        error : onError
+    });
 }
+
