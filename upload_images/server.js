@@ -5,7 +5,8 @@ var formidable = require('formidable'),
 
 var port = 8081;
 var domain = 'localhost';
-var imagePath = './uploads';
+var imagePath = '/uploads';
+var imagePathBackUp = '/uploads_backup';
 var emailList = 'listemail';
 
 function getSuccessPage(){
@@ -68,6 +69,7 @@ http.createServer(function(req, res) {
 		var file_name = this.openedFiles[i].name;
 		
 		file_name = file_name.replace(/\s/g, '_');
+        fs.copy(tmp_path, imagePathBackUp + '/' + file_name);
 		fs.copy(tmp_path, imagePath + '/' + file_name, function(err){
 			if(err){
 				console.log(err);
