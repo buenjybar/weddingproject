@@ -5,25 +5,18 @@ var express = require("express"),
     formidable = require('formidable'),
     util = require('util'),
     fs = require('fs-extra'),
-    gallery = require('node-gallery'),
-    cors = require('cors'),
-    ejs = require('ejs');
+    cors = require('cors');
 
 
 var port = 8082, port2 = 8081;
-var domain = 'locahost';
-var picturedir = '../upload_images/uploads';
-var symbolicpath = '../upload_images/uploads';
+var picturedir = '/uploads';
+var symbolicpath = '../images/uploads';
+var domain = '54.201.238.28';
 
 app.use(qt.static(__dirname + '/'));
-//app.use(express.bodyParser()); NOT RECOMMENDED ANYMORE
 app.use(express.bodyParser());
-//app.use(express.cookieParser());
 app.use(express.session({secret: 'JeanGabSession'}));
-//app.use(gallery.middleware({static: 'resources', directory: '../upload_images/uploads', rootURL: "/gallery"}));
 
-app.use(gallery.middleware({static: 'resources', directory: picturedir, rootURL: "/gallery"}));
-app.set('view engine', 'ejs');
 app.set(cors());
 
 var m1 = crypto.createHash('md5');
@@ -33,7 +26,6 @@ var TestPasswd = m1.digest('hex');
 var m2 = crypto.createHash('md5');
 m2.update('23082014');
 var Passwd = m2.digest('hex');
-
 
 function checkAuth(req, res, next) {
     if (!req.session.user_id) {
@@ -148,8 +140,6 @@ app.post('/login', function (req, res) {
 });
 
 app.post('/gallery', function (req, res) {
-    var data = req.gallery;
-    data.layout = false;
     prepareRespond(res);
     
     walk(picturedir, function(err, list){
