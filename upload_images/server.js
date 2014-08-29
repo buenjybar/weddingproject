@@ -4,7 +4,7 @@ var formidable = require('formidable'),
 	fs = require('fs-extra');
 
 var port = 8081;
-var domain = 'localhost';
+var domain = '54.201.238.28';
 var imagePath = './uploads';
 var emailList = 'listemail';
 
