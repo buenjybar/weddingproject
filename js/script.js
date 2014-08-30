@@ -1,4 +1,4 @@
-var domain = 'localhost';
+var domain = '54.201.238.28';
 var portLogin = 8082;
 var portApp = 8081;
 var firstTime = true;

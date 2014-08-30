@@ -85,18 +85,10 @@ http.createServer(function(req, res) {
 		}
 		});
 });
-
-/*fs.copy(tmp_path, imagePath + '/' + file_name, function(err){
-			if(err){
-				console.log(err);
-			}else{
-				console.log('image added: ', file_name);
-			}
-		});*/
-		}
-	});
 	
     return;
   }
+});
+}
 }).listen(port);
 console.log("server started port "+port)
