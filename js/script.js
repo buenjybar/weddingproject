@@ -66,14 +66,19 @@ function postEmail(){
     setTimeout(resetField, 1000);
 }
 
+function activateGallery(){
+    Galleria.loadTheme('../js/galleria/themes/classic/galleria.classic.min.js');
+    Galleria.run('.galleria');   
+}
+
+function initGallery(){
+   Galleria.loadTheme('../js/galleria/themes/classic/galleria.classic.min.js');
+   Galleria.run('.galleria');
+   firstTime = false;
+}
 
 function gotogallery(){
-
-    if(firstTime) {
-        Galleria.loadTheme('../js/galleria/themes/classic/galleria.classic.min.js');
-        Galleria.run('.galleria');
-        firstTime = false;
-    }
+    if(firstTime) initGallery();  
     
     $.ajax({
          url: 'http://'+domain+':'+portLogin+'/gallery',
@@ -86,15 +91,21 @@ function gotogallery(){
             data = JSON.parse(data);
             if(data ==null || data.length == null) return;
             
-            var html = [];
+            var html = [], count = data.length-1;
             data.forEach(function(element){
                 var image = document.createElement('img');
                 image.src = element;
+                image.onload = function(){ 
+                    --count; 
+                    if (count ===0){
+                        //$('#imageContainer').append(html);                        
+                        $('#imageContainer').removeClass('hide');
+                        $(".row.panel").addClass('hide');
+                        Galleria.prototype.push(html);
+                    }
+                }
                 html.push(image);
             });
-            $('#imageContainer').append(html);
-            $('#imageContainer').removeClass('hide');
-            $(".row.panel").addClass('hide');
         },
         error : onError
     });
