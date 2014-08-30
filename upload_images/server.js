@@ -1,11 +1,13 @@
 var formidable = require('formidable'),
+    gm = require('gm'),
     http = require('http'),
     util = require('util'),
-	fs = require('fs-extra');
+    fs = require('fs-extra');
 
 var port = 8081;
 var domain = '54.201.238.28';
-var imagePath = './uploads';
+var imagePath = '/uploads';
+var imagePathBackup = '/uploads_backup';
 var emailList = 'listemail';
 
 function getSuccessPage(){
@@ -68,13 +70,29 @@ http.createServer(function(req, res) {
 		var file_name = this.openedFiles[i].name;
 		
 		file_name = file_name.replace(/\s/g, '_');
-		fs.copy(tmp_path, imagePath + '/' + file_name, function(err){
+		fs.copy(tmp_path, imagePathBackup + '/' + file_name,function(err){
+	if(err) return;
+
+		gm(imagePathBackup + '/' + file_name)
+		.size(function(err, size){
+		 if(err) console.log(err);
+		else {
+		this.resize(size.width / 2 , size.height / 2);
+		this.write(imagePath + '/' + file_name, function(err){
+			if(err) console.log(err);
+			else console.log('Image added :', file_name);
+			});
+		}
+		});
+});
+
+/*fs.copy(tmp_path, imagePath + '/' + file_name, function(err){
 			if(err){
 				console.log(err);
 			}else{
 				console.log('image added: ', file_name);
 			}
-		});
+		});*/
 		}
 	});
 	
