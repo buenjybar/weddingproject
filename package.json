@@ -18,5 +18,8 @@
     "grunt-processhtml": "^0.3.3",
     "grunt-prompt": "~0.2.0",
     "grunt-ssh": "~0.10.0"
+  },
+  "dependencies": {
+    "gm": "~1.16.0"
   }
 }

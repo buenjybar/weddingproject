@@ -9,27 +9,27 @@ function passwordCheck() {
     else return false;
 }
 
-function onError(xhr, textStatus, errorThrown){
+function onError(xhr, textStatus, errorThrown) {
     $("#alert-msg span").text(xhr.responseText);
     $("#alert-msg").removeClass('hide');
 
     setTimeout(function () {
         $("#alert-msg span").val('impossible de se connecter au serveur.');
         $("#alert-msg").addClass('hide');
-    }, 3000);    
+    }, 3000);
 }
 
 function gotoupload() {
     if (!passwordCheck()) return;
 
-    var md5 = function(value) {
+    var md5 = function (value) {
         return CryptoJS.MD5(value).toString();
     };
 
     var pass = md5($("#password").val());
 
     $.ajax({
-        url: 'http://'+domain+':'+portLogin+'/login',
+        url: 'http://' + domain + ':' + portLogin + '/login',
         type: 'POST',
         content: 'application/json',
         dataType: 'html',
@@ -45,69 +45,66 @@ function gotoupload() {
 }
 
 function postForm() {
-    $('#postImage')[0].submit(function(){
+    $('#postImage')[0].submit(function () {
         return false;
     });
-    
-    function resetField(){
+
+    function resetField() {
         $('#postImage input').val('');//reset input files
     }
+
     setTimeout(resetField, 1000);
 }
 
 
-function postEmail(){
-    $('#postEmail')[0].submit(function(){
+function postEmail() {
+    $('#postEmail')[0].submit(function () {
         return false;
     });
-    function resetField(){
+    function resetField() {
         $('#postEmail input').val('');//reset input   
     }
+
     setTimeout(resetField, 1000);
 }
 
-function activateGallery(){
-    Galleria.loadTheme('../js/galleria/themes/classic/galleria.classic.min.js');
-    Galleria.run('.galleria');   
-}
-
-function initGallery(){
-   Galleria.loadTheme('../js/galleria/themes/classic/galleria.classic.min.js');
-   Galleria.run('.galleria');
-   firstTime = false;
-}
-
-function gotogallery(){
-    if(firstTime) initGallery();  
-    
+function displayGallery() {
     $.ajax({
-         url: 'http://'+domain+':'+portLogin+'/gallery',
+        url: 'http://' + domain + ':' + portLogin + '/gallery',
         type: 'POST',
         content: 'application/html',
         dataType: 'html',
-        crossDomain : true,
+        crossDomain: true,
         data: {},
-        success : function(data, textStatus, xhr){
+        error: onError,
+        success: function (data, textStatus, xhr) {
             data = JSON.parse(data);
-            if(data ==null || data.length == null) return;
-            
-            var html = [], count = data.length-1;
-            data.forEach(function(element){
-                var image = document.createElement('img');
-                image.src = element;
-                image.onload = function(){ 
-                    --count; 
-                    if (count ===0){
-                        //$('#imageContainer').append(html);                        
-                        $('#imageContainer').removeClass('hide');
-                        $(".row.panel").addClass('hide');
-                        Galleria.prototype.push(html);
-                    }
-                }
-                html.push(image);
-            });
-        },
-        error : onError
+            if (data == null || data.length == null) return;
+
+            $(".row.panel").addClass('hide');
+            $('#imageContainer').parent().removeClass('hide');
+
+            function createElement(element) {
+                var div = document.createElement('div');
+                var img = document.createElement('img');
+                img.setAttribute('data-lazy', element);
+                div.appendChild(img);
+                return div;
+            }
+
+            var doms = data.map(createElement);
+
+            $('#imageContainer').append(doms);
+
+            var options = {
+                infinite: true,
+                arrows: true,
+                lazyLoad: 'ondemand',
+                centerMode: true,
+                slidesToShow : 1,
+                slidesToScroll : 1
+            };
+            $('.slider').slick(options);
+        }
     });
 }
-
